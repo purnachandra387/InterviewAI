@@ -71,17 +71,19 @@ const generateQuestions = async (req, res) => {
         if (err.status === 401 || err.status === 429 || err?.message?.includes("API key")) {
             // Fallback to static AI logic on rate limit or auth failure
             const fallbackDB = require("../data/questions");
-            const roleKey = Object.keys(fallbackDB).find(r => role.toLowerCase().includes(r.toLowerCase())) || "full stack developer";
+            const hrDB = require("../data/hrQuestions") || [];
+            
+            const roleKey = Object.keys(fallbackDB).find(r => role.toLowerCase().includes(r.toLowerCase())) || "frontend developer";
             let offlineQues = [];
 
             if (type === "hr") {
-                offlineQues = fallbackDB["hr"] || [];
+                offlineQues = hrDB.slice(0, 5);
             } else if (type === "technical") {
-                offlineQues = fallbackDB[roleKey] || fallbackDB["full stack developer"];
+                offlineQues = fallbackDB[roleKey] || fallbackDB["frontend developer"];
             } else {
                 offlineQues = [
-                    ...(fallbackDB["hr"] || []).slice(0, 3),
-                    ...(fallbackDB[roleKey] || fallbackDB["full stack developer"]).slice(0, 3)
+                    ...hrDB.slice(0, 3),
+                    ...(fallbackDB[roleKey] || fallbackDB["frontend developer"]).slice(0, 3)
                 ];
             }
 
