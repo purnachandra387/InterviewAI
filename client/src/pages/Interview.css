@@ -1,0 +1,11 @@
+h2 {
+    color: var(--text);
+}
+
+label {
+    color: var(--text);
+}
+
+p {
+    color: var(--text);
+}

@@ -1,0 +1,132 @@
+﻿
+> ai-interview-client@0.1.0 start
+> react-scripts start
+
+node.exe : (node:33868) [DEP
+_WEBPACK_DEV_SERVER_ON_AFTER
+_SETUP_MIDDLEWARE] 
+DeprecationWarning: 
+'onAfterSetupMiddleware' 
+option is deprecated. 
+Please use the 
+'setupMiddlewares' option.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\U
+sers\ypurn\AppData\Roaming\ 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: ((node  
+  :33868) [D...ewares' op   
+ tion.:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+(Use `node 
+--trace-deprecation ...` to 
+show where the warning was 
+created)
+(node:33868) [DEP_WEBPACK_DE
+V_SERVER_ON_BEFORE_SETUP_MID
+DLEWARE] 
+DeprecationWarning: 
+'onBeforeSetupMiddleware' 
+option is deprecated. 
+Please use the 
+'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view ai-interview-client in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.46.0.188:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Failed to compile.
+
+[eslint] 
+src\pages\MockInterview.jsx
+Syntax error: Missing semicolon. (35:34) (35:34)
+[1m[31mERROR[39m[22m in [1m./src/pages/MockInterview.jsx[39m[22m
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\src\pages\MockInterview.jsx: Missing semicolon. (35:34)
+
+[0m [90m 33 |[39m [32m                cx={size / 2} cy={size / 2} r={r} fill="none"[39m
+ [90m 34 |[39m [32m                stroke={color} strokeWidth={8}[39m
+[31m[1m>[22m[39m[90m 35 |[39m [32m                strokeDasharray={`[39m${ dash } ${ circ } [32m`}[39m
+ [90m    |[39m                                   [31m[1m^[22m[39m
+ [90m 36 |[39m [32m                strokeLinecap="round"[39m
+ [90m 37 |[39m [32m                style={{ transition: "stroke-dasharray 0.8s ease" }}[39m
+ [90m 38 |[39m [32m            />[39m[0m
+    at constructor (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:365:19)
+    at FlowParserMixin.raise (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:6599:19)
+    at FlowParserMixin.semicolon (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:6895:10)
+    at FlowParserMixin.parseExpressionStatement (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:13285:10)
+    at FlowParserMixin.parseExpressionStatement (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:2940:18)
+    at FlowParserMixin.parseStatementContent (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:12899:19)
+    at FlowParserMixin.parseStatementLike (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:12767:17)
+    at FlowParserMixin.parseStatementLike (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:2918:24)
+    at FlowParserMixin.parseModuleItem (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:12744:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:13316:36)
+    at FlowParserMixin.parseBlockBody (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:13309:10)
+    at FlowParserMixin.parseProgram (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:12622:10)
+    at FlowParserMixin.parseTopLevel (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:12612:25)
+    at FlowParserMixin.parseTopLevel (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:3685:28)
+    at FlowParserMixin.parse (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:14488:25)
+    at parse (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\parser\lib\index.js:14522:38)
+    at parser (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\core\lib\parser\index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\core\lib\transformation\index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\@babel\core\lib\transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\gensync\index.js:261:32)
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\gensync\index.js:273:13
+    at async.call.result.err.err (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\client\node_modules\gensync\index.js:223:11)
+
+[1m[31mERROR[39m[22m in [1m[eslint] 
+src\pages\MockInterview.jsx
+  Line 35:34:  Parsing [1m[31merror[39m[22m[1m: Missing semicolon. (35:34)
+
+[39m[22m
+
+webpack compiled with [1m[31m2 errors[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m

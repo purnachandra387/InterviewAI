@@ -1,0 +1,15 @@
+Start Response: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /api/interview/start</pre>
+</body>
+</html>
+
+FATAL: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\day14_test.js:26:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

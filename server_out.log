@@ -1,0 +1,2 @@
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+❌ Mongo Connection Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.qb9aq3a.mongodb.net

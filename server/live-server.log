@@ -1,0 +1,329 @@
+﻿
+> server@1.0.0 dev
+> nodemon server.js
+
+[33m[nodemon] 3.1.14[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ≡ƒ¢í∩╕Å auth for agents: https://vestauth.com
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ΓÜÖ∩╕Å  suppress all logs with { quiet: true }
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ΓÜÖ∩╕Å  suppress all logs with { quiet: true }
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ΓÜÖ∩╕Å  enable debug logging with { debug: true }
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ΓÜÖ∩╕Å  override existing env vars with { override: true }
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ΓÜí∩╕Å secrets for agents: https://dotenvx.com/as2
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ
+node.exe : Stripe Checkout 
+Error: 
+StripeAuthenticationError: 
+Invalid API Key provided: 
+sk_test_demo
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\U
+sers\ypurn\AppData\Roaming\ 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (Strip  
+  e Checkout...d: sk_test   
+ _demo:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+    at res.toJSON.then.Error
+_js_1.StripeAPIError.message
+ (C:\Users\ypurn\OneDrive\De
+sktop\ai-interview-saas\serv
+er\node_modules\stripe\cjs\R
+equestSender.js:102:31)
+    at process.processTicksA
+ndRejections (node:internal/
+process/task_queues:104:5) {
+  type: 
+'StripeAuthenticationError',
+  raw: {
+    message: 'Invalid API 
+Key provided: sk_test_demo',
+    type: 
+'invalid_request_error',
+    headers: {
+      server: 'nginx',
+      date: 'Tue, 03 Mar 
+2026 11:54:52 GMT',
+      'content-type': 
+'application/json',
+      'content-length': 
+'114',
+      connection: 
+'keep-alive',
+      'access-control-allow-
+credentials': 'true',
+      'access-control-allow-
+methods': 'GET, HEAD, PUT, 
+PATCH, POST, DELETE',
+      'access-control-allow-
+origin': '*',
+      'access-control-expose
+-headers': 'Request-Id, 
+Stripe-Manage-Version, 
+Stripe-Should-Retry, X-Strip
+e-External-Auth-Required, X-
+Stripe-Privileged-Session-Re
+quired',
+      
+'access-control-max-age': 
+'300',
+      'cache-control': 
+'no-cache, no-store',
+      
+'content-security-policy': 
+"base-uri 'none'; 
+default-src 'none'; 
+form-action 'none'; 
+frame-ancestors 'none'; 
+upgrade-insecure-requests",
+      vary: 'Origin',
+      'www-authenticate': 
+'Bearer realm="Stripe"',
+      'x-robots-tag': 
+'none',
+      'x-wc': 'ABHIJ',
+      'strict-transport-secu
+rity': 'max-age=63072000; 
+includeSubDomains; preload'
+    },
+    statusCode: 401,
+    requestId: undefined
+  },
+  rawType: 
+'invalid_request_error',
+  code: undefined,
+  doc_url: undefined,
+  param: undefined,
+  detail: undefined,
+  headers: {
+    server: 'nginx',
+    date: 'Tue, 03 Mar 2026 
+11:54:52 GMT',
+    'content-type': 
+'application/json',
+    'content-length': '114',
+    connection: 
+'keep-alive',
+    'access-control-allow-cr
+edentials': 'true',
+    'access-control-allow-me
+thods': 'GET, HEAD, PUT, 
+PATCH, POST, DELETE',
+    'access-control-allow-or
+igin': '*',
+    'access-control-expose-h
+eaders': 'Request-Id, 
+Stripe-Manage-Version, 
+Stripe-Should-Retry, X-Strip
+e-External-Auth-Required, X-
+Stripe-Privileged-Session-Re
+quired',
+    
+'access-control-max-age': 
+'300',
+    'cache-control': 
+'no-cache, no-store',
+    
+'content-security-policy': 
+"base-uri 'none'; 
+default-src 'none'; 
+form-action 'none'; 
+frame-ancestors 'none'; 
+upgrade-insecure-requests",
+    vary: 'Origin',
+    'www-authenticate': 
+'Bearer realm="Stripe"',
+    'x-robots-tag': 'none',
+    'x-wc': 'ABHIJ',
+    'strict-transport-securi
+ty': 'max-age=63072000; 
+includeSubDomains; preload'
+  },
+  requestId: undefined,
+  statusCode: 401,
+  userMessage: undefined,
+  charge: undefined,
+  decline_code: undefined,
+  payment_intent: undefined,
+  payment_method: undefined,
+  payment_method_type: 
+undefined,
+  setup_intent: undefined,
+  source: undefined
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ΓÜÖ∩╕Å  suppress all logs with { quiet: true }
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ
+Stripe Checkout Error: 
+StripeAuthenticationError: 
+Invalid API Key provided: 
+sk_test_demo
+    at res.toJSON.then.Error
+_js_1.StripeAPIError.message
+ (C:\Users\ypurn\OneDrive\De
+sktop\ai-interview-saas\serv
+er\node_modules\stripe\cjs\R
+equestSender.js:102:31)
+    at process.processTicksA
+ndRejections (node:internal/
+process/task_queues:104:5) {
+  type: 
+'StripeAuthenticationError',
+  raw: {
+    message: 'Invalid API 
+Key provided: sk_test_demo',
+    type: 
+'invalid_request_error',
+    headers: {
+      server: 'nginx',
+      date: 'Tue, 03 Mar 
+2026 11:58:11 GMT',
+      'content-type': 
+'application/json',
+      'content-length': 
+'114',
+      connection: 
+'keep-alive',
+      'access-control-allow-
+credentials': 'true',
+      'access-control-allow-
+methods': 'GET, HEAD, PUT, 
+PATCH, POST, DELETE',
+      'access-control-allow-
+origin': '*',
+      'access-control-expose
+-headers': 'Request-Id, 
+Stripe-Manage-Version, 
+Stripe-Should-Retry, X-Strip
+e-External-Auth-Required, X-
+Stripe-Privileged-Session-Re
+quired',
+      
+'access-control-max-age': 
+'300',
+      'cache-control': 
+'no-cache, no-store',
+      
+'content-security-policy': 
+"base-uri 'none'; 
+default-src 'none'; 
+form-action 'none'; 
+frame-ancestors 'none'; 
+upgrade-insecure-requests",
+      vary: 'Origin',
+      'www-authenticate': 
+'Bearer realm="Stripe"',
+      'x-robots-tag': 
+'none',
+      'x-wc': 'ABHIJ',
+      'strict-transport-secu
+rity': 'max-age=63072000; 
+includeSubDomains; preload'
+    },
+    statusCode: 401,
+    requestId: undefined
+  },
+  rawType: 
+'invalid_request_error',
+  code: undefined,
+  doc_url: undefined,
+  param: undefined,
+  detail: undefined,
+  headers: {
+    server: 'nginx',
+    date: 'Tue, 03 Mar 2026 
+11:58:11 GMT',
+    'content-type': 
+'application/json',
+    'content-length': '114',
+    connection: 
+'keep-alive',
+    'access-control-allow-cr
+edentials': 'true',
+    'access-control-allow-me
+thods': 'GET, HEAD, PUT, 
+PATCH, POST, DELETE',
+    'access-control-allow-or
+igin': '*',
+    'access-control-expose-h
+eaders': 'Request-Id, 
+Stripe-Manage-Version, 
+Stripe-Should-Retry, X-Strip
+e-External-Auth-Required, X-
+Stripe-Privileged-Session-Re
+quired',
+    
+'access-control-max-age': 
+'300',
+    'cache-control': 
+'no-cache, no-store',
+    
+'content-security-policy': 
+"base-uri 'none'; 
+default-src 'none'; 
+form-action 'none'; 
+frame-ancestors 'none'; 
+upgrade-insecure-requests",
+    vary: 'Origin',
+    'www-authenticate': 
+'Bearer realm="Stripe"',
+    'x-robots-tag': 'none',
+    'x-wc': 'ABHIJ',
+    'strict-transport-securi
+ty': 'max-age=63072000; 
+includeSubDomains; preload'
+  },
+  requestId: undefined,
+  statusCode: 401,
+  userMessage: undefined,
+  charge: undefined,
+  decline_code: undefined,
+  payment_intent: undefined,
+  payment_method: undefined,
+  payment_method_type: 
+undefined,
+  setup_intent: undefined,
+  source: undefined
+}
+[32m[nodemon] restarting child process[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ΓÜÖ∩╕Å  suppress all logs with { quiet: true }
+MongoDB Connected Γ£à
+Server running on port 5000 ≡ƒÜÇ

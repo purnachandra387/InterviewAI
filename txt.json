@@ -1,0 +1,1 @@
+{"Status":0,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"cluster0.qb9aq3a.mongodb.net","type":16}],"Answer":[{"name":"cluster0.qb9aq3a.mongodb.net","type":16,"TTL":60,"data":"\"authSource=admin&replicaSet=atlas-oozhja-shard-0\""}]}

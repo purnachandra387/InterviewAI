@@ -1,0 +1,289 @@
+/* ── Coach Page ─────────────────────────────────────────────── */
+.coach-page {
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.coach-body {
+    padding: 2.5rem 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* ── Hero Daily Tip ──────────────────────────────────────────── */
+.coach-hero {
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.12) 0%, rgba(26, 26, 46, 0.8) 100%);
+    border: 1px solid rgba(108, 99, 255, 0.25);
+    border-radius: 24px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.coach-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.2), transparent 70%);
+    border-radius: 50%;
+}
+
+.coach-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(108, 99, 255, 0.15);
+    color: var(--primary);
+    border: 1px solid rgba(108, 99, 255, 0.3);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.coach-hero h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.coach-tip-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.coach-tip-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 12px rgba(108, 99, 255, 0.4));
+}
+
+.coach-tip-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* ── Progress Section ────────────────────────────────────────── */
+.coach-progress-section h2,
+.coach-advice-section h2,
+.coach-quick-links h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+.coach-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+.coach-prog-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.4rem;
+    transition: transform 0.2s;
+}
+
+.coach-prog-card:hover {
+    transform: translateY(-3px);
+}
+
+.cpp-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.cpp-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.cpp-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.cpp-bar-wrap {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.cpp-bar {
+    height: 100%;
+    border-radius: 50px;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cpp-goal {
+    font-size: 0.72rem;
+    color: rgba(167, 169, 190, 0.6);
+    margin-top: 0.4rem;
+}
+
+/* ── Advice / Playbook ───────────────────────────────────────── */
+.coach-cat-tabs {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.coach-cat-tab {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.coach-cat-tab:hover,
+.coach-cat-tab.active {
+    background: rgba(from var(--cat-color) r g b / 0.15);
+    border-color: var(--cat-color);
+    color: var(--cat-color);
+}
+
+.coach-tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.coach-tip-row {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    animation: fadeUp 0.3s ease both;
+    animation-delay: var(--delay, 0s);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.coach-tip-row:hover {
+    transform: translateX(4px);
+    border-color: rgba(108, 99, 255, 0.3);
+}
+
+.coach-tip-num {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: rgba(108, 99, 255, 0.3);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.coach-tip-row p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* ── Quick Links ─────────────────────────────────────────────── */
+.coach-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.coach-link-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+.coach-link-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.15);
+}
+
+.coach-link-card>span {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.clc-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.clc-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .coach-tip-card {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .coach-hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .coach-tip-text {
+        font-size: 0.95rem;
+    }
+
+    .coach-progress-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .coach-links-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .coach-hero {
+        padding: 1.5rem;
+    }
+
+    .coach-progress-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .coach-links-grid {
+        grid-template-columns: 1fr;
+    }
+}

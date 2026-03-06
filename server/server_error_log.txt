@@ -1,0 +1,33 @@
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+MongoDB Connected ✅
+Server running on port 5000 🚀
+ReferenceError: role is not defined
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:82
+    at Array.find (<anonymous>)
+    at generateQuestions (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:53)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+ReferenceError: role is not defined
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:82
+    at Array.find (<anonymous>)
+    at generateQuestions (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:53)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+ReferenceError: role is not defined
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:82
+    at Array.find (<anonymous>)
+    at generateQuestions (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:53)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+ReferenceError: role is not defined
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:82
+    at Array.find (<anonymous>)
+    at generateQuestions (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:53)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+ReferenceError: role is not defined
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:82
+    at Array.find (<anonymous>)
+    at generateQuestions (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:53)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+ReferenceError: role is not defined
+    at C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:82
+    at Array.find (<anonymous>)
+    at generateQuestions (C:\Users\ypurn\OneDrive\Desktop\ai-interview-saas\server\controllers\aiController.js:73:53)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

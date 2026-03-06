@@ -1,0 +1,354 @@
+/* ─────────────────────────────────────────────
+   AI Interview SaaS — Settings Page Styles
+───────────────────────────────────────────── */
+
+.settings-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.settings-main {
+    flex: 1;
+    padding: 2.5rem;
+    max-width: 760px;
+    overflow-y: auto;
+}
+
+/* ── Settings Header ── */
+.settings-header {
+    margin-bottom: 2.5rem;
+}
+
+.settings-header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+}
+
+.settings-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ── Section Card ── */
+.settings-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.settings-section:hover {
+    border-color: rgba(108, 99, 255, 0.25);
+}
+
+.settings-section--danger {
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.settings-section--danger:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* ── Section Header ── */
+.settings-section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-section-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.settings-section-header h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+}
+
+.settings-section-header p {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+}
+
+/* ── Avatar Row ── */
+.settings-avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.settings-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #a78bfa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(108, 99, 255, 0.35);
+}
+
+.settings-user-name {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.settings-user-email {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.settings-plan-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--text-muted);
+    padding: 0.2rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.settings-plan-badge--pro {
+    background: rgba(108, 99, 255, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(108, 99, 255, 0.3);
+}
+
+/* ── Form ── */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.settings-fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.settings-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.settings-field label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.settings-field input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    color: var(--text);
+    font-size: 0.92rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.settings-field input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.18);
+}
+
+.settings-input--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.settings-field-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ── Alerts ── */
+.settings-alert {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.settings-alert--success {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+.settings-alert--error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+/* ── Buttons ── */
+.settings-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.72rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.settings-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.settings-btn--primary {
+    background: var(--primary);
+    color: #fff;
+    align-self: flex-start;
+}
+
+.settings-btn--primary:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+}
+
+.settings-btn--ghost {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.settings-btn--ghost:hover:not(:disabled) {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.settings-btn--danger {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.settings-btn--danger:hover {
+    background: rgba(239, 68, 68, 0.22);
+}
+
+/* ── Subscription Card ── */
+.settings-sub-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+}
+
+.settings-plan-big {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.settings-plan-big--pro {
+    color: #a78bfa;
+}
+
+.settings-sub-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 360px;
+    line-height: 1.6;
+}
+
+.settings-sub-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: stretch;
+    flex-shrink: 0;
+}
+
+.settings-pro-active {
+    font-size: 0.88rem;
+    color: #22c55e;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ── Danger Row ── */
+.settings-danger-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.settings-danger-title {
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 0.2rem;
+}
+
+.settings-danger-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .settings-main {
+        padding: 1.5rem 1rem;
+    }
+
+    .settings-fields-row {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-sub-card {
+        flex-direction: column;
+    }
+
+    .settings-danger-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

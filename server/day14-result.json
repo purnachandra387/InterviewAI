@@ -1,0 +1,4 @@
+{
+  "status": 200,
+  "body": "{\"_id\":\"69a90ac01e4c7b70931a53c1\",\"userId\":\"69a90ac01e4c7b70931a53be\",\"role\":\"Frontend Developer\",\"questions\":[\"What is the Virtual DOM?\",\"Explain the difference between let, var, and const.\",\"What are React hooks?\",\"Explain event delegation in JavaScript.\",\"What is CSS Flexbox?\"],\"answers\":[\"Virtual DOM improves performance by reducing DOM repaints.\",\"React hooks manage state and side effects in functional components.\",\"Flexbox is for laying out items in an optimal row/column format.\"],\"createdAt\":\"2026-03-05T04:46:56.484Z\",\"__v\":0,\"feedback\":\"Excellent interview performance!\",\"score\":4}"
+}
