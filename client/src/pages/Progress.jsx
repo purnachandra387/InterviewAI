@@ -32,7 +32,7 @@ function Progress() {
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
     axios
-      .get("http://localhost:5000/api/interview/progress", { headers })
+      .get("https://interviewai-backend-0k7p.onrender.com/api/interview/progress", { headers })
       .then((res) => setData(res.data))
       .catch((err) => console.error("Error fetching progress:", err));
   }, []);

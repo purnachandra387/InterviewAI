@@ -6,9 +6,9 @@ function Profile() {
     const [badges, setBadges] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/user/profile")
+        axios.get("https://interviewai-backend-0k7p.onrender.com/api/user/profile")
             .then(res => setProfile(res.data));
-        axios.get("http://localhost:5000/api/user/badges")
+        axios.get("https://interviewai-backend-0k7p.onrender.com/api/user/badges")
             .then(res => setBadges(res.data))
             .catch(err => console.error(err));
     }, []);

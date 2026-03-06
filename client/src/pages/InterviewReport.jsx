@@ -45,7 +45,7 @@ function InterviewReport({ report, interviewId }) {
       {interviewId && (
         <div style={{ marginTop: "25px", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "20px" }}>
             <button
-                onClick={() => window.open(`http://localhost:5000/api/report/download/${interviewId}`)}
+                onClick={() => window.open(`https://interviewai-backend-0k7p.onrender.com/api/report/download/${interviewId}`)}
                 style={{
                     padding: "12px 24px",
                     background: "#3b82f6",

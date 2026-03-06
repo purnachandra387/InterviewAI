@@ -10,7 +10,7 @@ function Roadmap() {
   const generateRoadmap = async () => {
 
     const res = await axios.post(
-      "http://localhost:5000/api/roadmap/generate",
+      "https://interviewai-backend-0k7p.onrender.com/api/roadmap/generate",
       { role }
     );
 

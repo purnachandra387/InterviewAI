@@ -114,7 +114,7 @@ export default function ResumeAnalyzer() {
             const formData = new FormData();
             formData.append("resume", file);
 
-            const res = await axios.post("http://localhost:5000/api/resume/analyze", formData);
+            const res = await axios.post("https://interviewai-backend-0k7p.onrender.com/api/resume/analyze", formData);
 
             setProgress(100);
             setTimeout(() => {

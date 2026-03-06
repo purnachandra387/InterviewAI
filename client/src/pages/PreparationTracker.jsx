@@ -11,7 +11,7 @@ function PreparationTracker() {
     const token = localStorage.getItem("token");
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
     try {
-        const res = await axios.get("http://localhost:5000/api/tasks", { headers });
+        const res = await axios.get("https://interviewai-backend-0k7p.onrender.com/api/tasks", { headers });
         setTasks(res.data);
     } catch (err) {
         if (err?.response?.status === 401) {
@@ -32,7 +32,7 @@ function PreparationTracker() {
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
     try {
         await axios.post(
-          "http://localhost:5000/api/tasks/create",
+          "https://interviewai-backend-0k7p.onrender.com/api/tasks/create",
           { title },
           { headers }
         );
@@ -47,7 +47,7 @@ function PreparationTracker() {
     const token = localStorage.getItem("token");
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
     try {
-        await axios.put(`http://localhost:5000/api/tasks/complete/${id}`, {}, { headers });
+        await axios.put(`https://interviewai-backend-0k7p.onrender.com/api/tasks/complete/${id}`, {}, { headers });
         fetchTasks();
     } catch (err) {
         console.error("Failed to complete task", err);
@@ -58,7 +58,7 @@ function PreparationTracker() {
     const token = localStorage.getItem("token");
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
     try {
-        await axios.delete(`http://localhost:5000/api/tasks/${id}`, { headers });
+        await axios.delete(`https://interviewai-backend-0k7p.onrender.com/api/tasks/${id}`, { headers });
         fetchTasks();
     } catch (err) {
         console.error("Failed to delete task", err);

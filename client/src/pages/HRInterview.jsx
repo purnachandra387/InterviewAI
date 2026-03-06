@@ -10,7 +10,7 @@ function HRInterview() {
     const token = localStorage.getItem("token");
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-    axios.get("http://localhost:5000/api/hr/start", { headers })
+    axios.get("https://interviewai-backend-0k7p.onrender.com/api/hr/start", { headers })
       .then(res => setQuestions(res.data.questions))
       .catch(err => {
           if (err?.response?.status === 401) {

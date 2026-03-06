@@ -7,7 +7,7 @@ function DailyChallenge() {
 
   useEffect(() => {
     // You can swap local API for production endpoints
-    axios.get("http://localhost:5000/api/challenge/today")
+    axios.get("https://interviewai-backend-0k7p.onrender.com/api/challenge/today")
       .then(res => setChallenge(res.data))
       .catch(err => console.error("Error fetching daily challenge:", err));
   }, []);
