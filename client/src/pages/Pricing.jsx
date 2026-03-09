@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createCheckoutSession, demoUpgrade } from "../services/api";
+import { createOrder, demoUpgrade, verifyPayment } from "../services/api";
 import "./Pricing.css";
 
 const PricingSidebar = () => (
@@ -27,16 +27,48 @@ export default function Pricing() {
     const currentUser = JSON.parse(localStorage.getItem("user") || "{}");
     const isPremium = currentUser.isPremium;
 
-    // Trigger Stripe checkout
+    // Trigger Razorpay checkout
     const handleUpgrade = async () => {
         setLoading(true);
         setError("");
         try {
-            const { data } = await createCheckoutSession();
-            // Redirect user to the secure Stripe Checkout URL from backend
-            window.location.href = data.url;
+            const { data: order } = await createOrder();
+
+            const options = {
+                key: process.env.REACT_APP_RAZORPAY_KEY_ID || "YOUR_RAZORPAY_KEY_ID",
+                amount: order.amount,
+                currency: "INR",
+                name: "InterviewAI",
+                description: "Pro Subscription",
+                order_id: order.id,
+                handler: async function (response) {
+                    try {
+                        await verifyPayment({
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_order_id: response.razorpay_order_id,
+                            razorpay_signature: response.razorpay_signature
+                        });
+                        
+                        const updatedUser = { ...currentUser, isPremium: true };
+                        localStorage.setItem("user", JSON.stringify(updatedUser));
+                        navigate("/dashboard?payment=success");
+                    } catch (err) {
+                        alert("Payment verification failed");
+                    }
+                },
+                theme: {
+                    color: "#6c63ff"
+                }
+            };
+
+            const rzp = new window.Razorpay(options);
+            rzp.on('payment.failed', function (response){
+                setError("Payment failed: " + response.error.description);
+            });
+            rzp.open();
         } catch (err) {
             setError(err.response?.data?.message || "Failed to initiate checkout");
+        } finally {
             setLoading(false);
         }
     };
@@ -111,7 +143,7 @@ export default function Pricing() {
                         {!isPremium ? (
                             <div className="upgrade-actions">
                                 <button className="btn-pricing btn-pro" onClick={handleUpgrade} disabled={loading}>
-                                    {loading ? <span className="spinner-sm"></span> : "💳 Upgrade with Stripe"}
+                                    {loading ? <span className="spinner-sm"></span> : "💳 Upgrade with Razorpay"}
                                 </button>
                                 <button className="btn-pricing btn-demo" onClick={handleDemoUpgrade} disabled={loading}>
                                     🧪 Demo Upgrade (No CC needed)

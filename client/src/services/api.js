@@ -60,9 +60,10 @@ export const analyzeResume = (formData) =>
 export const getResumeHistory = () => API.get("/resume/history");
 export const getResumeById = (id) => API.get(`/resume/history/${id}`);
 
-// ── Stripe & Subscriptions ─────────────────────────────────
-export const createCheckoutSession = () => API.post("/stripe/create-checkout-session");
-export const demoUpgrade = () => API.post("/stripe/demo-upgrade");
+// ── Razorpay & Subscriptions ───────────────────────────────
+export const createOrder = () => API.post("/payment/create-order");
+export const verifyPayment = (data) => API.post("/payment/verify-payment", data);
+export const demoUpgrade = () => API.post("/payment/demo-upgrade");
 
 // ── Analytics ──────────────────────────────────────────────
 export const getAnalytics = () => API.get("/analytics");
