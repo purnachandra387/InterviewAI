@@ -117,6 +117,10 @@ export default function Dashboard() {
         { icon: "⭐", title: "Upgrade to Pro", desc: "Unlock unlimited mock interviews and resume checks", link: "/pricing" },
     ];
 
+    if (user?.role === "admin") {
+        actions.unshift({ icon: "Admin", title: "Admin Dashboard", desc: "View platform-wide metrics and recent users", link: "/admin" });
+    }
+
     return (
         <div className="dashboard">
             {/* Navbar */}
@@ -266,6 +270,10 @@ export default function Dashboard() {
                         </span>
                     </div>
                     <div className="user-info-row">
+                        <span className="key">Access</span>
+                        <span className="val">{user?.role === "admin" ? "Admin" : "User"}</span>
+                    </div>
+                    <div className="user-info-row">
                         <span className="key">Member Since</span>
                         <span className="val">{new Date(user?.createdAt).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}</span>
                     </div>
@@ -275,3 +283,6 @@ export default function Dashboard() {
         </div>
     );
 }
+
+
+

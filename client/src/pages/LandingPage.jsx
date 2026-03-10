@@ -74,7 +74,15 @@ export default function LandingPage() {
     // Check if user already logged in — redirect to dashboard
     useEffect(() => {
         const token = localStorage.getItem("token");
-        if (token) navigate("/dashboard");
+        let storedUser = {};
+        try {
+            storedUser = JSON.parse(localStorage.getItem("user") || "{}");
+        } catch {
+            storedUser = {};
+        }
+
+        if (token) navigate(storedUser.role === "admin" ? "/admin" : "/dashboard");
+
     }, [navigate]);
 
     useEffect(() => {
@@ -286,3 +294,4 @@ export default function LandingPage() {
         </div>
     );
 }
+

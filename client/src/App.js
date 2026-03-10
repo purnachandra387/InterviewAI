@@ -24,92 +24,65 @@ import DailyChallenge from "./pages/DailyChallenge";
 import Progress from "./pages/Progress";
 import PreparationTracker from "./pages/PreparationTracker";
 import HRInterview from "./pages/HRInterview";
+import AdminDashboard from "./pages/AdminDashboard";
 
+const readStoredUser = () => {
+    try {
+        return JSON.parse(localStorage.getItem("user") || "{}");
+    } catch {
+        return {};
+    }
+};
 
-// Protected Route — redirects to /login if no token
 const PrivateRoute = ({ children }) => {
     const token = localStorage.getItem("token");
     return token ? children : <Navigate to="/login" replace />;
+};
+
+const AdminRoute = ({ children }) => {
+    const token = localStorage.getItem("token");
+    const user = readStoredUser();
+
+    if (!token) {
+        return <Navigate to="/login" replace />;
+    }
+
+    return user.role === "admin"
+        ? children
+        : <Navigate to="/dashboard" replace />;
 };
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                {/* Public routes */}
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
 
-                {/* Protected routes */}
-                <Route path="/dashboard" element={
-                    <PrivateRoute><Dashboard /></PrivateRoute>
-                } />
-                <Route path="/generate" element={
-                    <PrivateRoute><QuestionGenerator /></PrivateRoute>
-                } />
-                <Route path="/history" element={
-                    <PrivateRoute><History /></PrivateRoute>
-                } />
-                <Route path="/mock" element={
-                    <PrivateRoute><MockInterview /></PrivateRoute>
-                } />
-                <Route path="/resume" element={
-                    <PrivateRoute><ResumeAnalyzer /></PrivateRoute>
-                } />
-                <Route path="/pricing" element={
-                    <PrivateRoute><Pricing /></PrivateRoute>
-                } />
-                <Route path="/settings" element={
-                    <PrivateRoute><Settings /></PrivateRoute>
-                } />
-                <Route path="/analytics" element={
-                    <PrivateRoute><Analytics /></PrivateRoute>
-                } />
-                <Route path="/achievements" element={
-                    <PrivateRoute><Achievements /></PrivateRoute>
-                } />
-                <Route path="/coach" element={
-                    <PrivateRoute><Coach /></PrivateRoute>
-                } />
-                <Route path="/company" element={
-                    <PrivateRoute><CompanyPrep /></PrivateRoute>
-                } />
-                <Route path="/journal" element={
-                    <PrivateRoute><Journal /></PrivateRoute>
-                } />
-                <Route path="/mock/review/:id" element={
-                    <PrivateRoute><MockReview /></PrivateRoute>
-                } />
-                <Route path="/day13" element={
-                    <PrivateRoute><Day13Interview /></PrivateRoute>
-                } />
-                <Route path="/interview-history" element={
-                    <PrivateRoute><InterviewHistory /></PrivateRoute>
-                } />
-                <Route path="/profile" element={
-                    <PrivateRoute><Profile /></PrivateRoute>
-                } />
-                <Route path="/roadmap" element={
-                    <PrivateRoute><Roadmap /></PrivateRoute>
-                } />
-                <Route path="/daily-challenge" element={
-                    <PrivateRoute><DailyChallenge /></PrivateRoute>
-                } />
-                <Route path="/progress" element={
-                    <PrivateRoute><Progress /></PrivateRoute>
-                } />
-                <Route path="/tracker" element={
-                    <PrivateRoute><PreparationTracker /></PrivateRoute>
-                } />
-                <Route path="/hr-interview" element={
-                    <PrivateRoute><HRInterview /></PrivateRoute>
-                } />
+                <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                <Route path="/generate" element={<PrivateRoute><QuestionGenerator /></PrivateRoute>} />
+                <Route path="/history" element={<PrivateRoute><History /></PrivateRoute>} />
+                <Route path="/mock" element={<PrivateRoute><MockInterview /></PrivateRoute>} />
+                <Route path="/resume" element={<PrivateRoute><ResumeAnalyzer /></PrivateRoute>} />
+                <Route path="/pricing" element={<PrivateRoute><Pricing /></PrivateRoute>} />
+                <Route path="/settings" element={<PrivateRoute><Settings /></PrivateRoute>} />
+                <Route path="/analytics" element={<PrivateRoute><Analytics /></PrivateRoute>} />
+                <Route path="/achievements" element={<PrivateRoute><Achievements /></PrivateRoute>} />
+                <Route path="/coach" element={<PrivateRoute><Coach /></PrivateRoute>} />
+                <Route path="/company" element={<PrivateRoute><CompanyPrep /></PrivateRoute>} />
+                <Route path="/journal" element={<PrivateRoute><Journal /></PrivateRoute>} />
+                <Route path="/mock/review/:id" element={<PrivateRoute><MockReview /></PrivateRoute>} />
+                <Route path="/day13" element={<PrivateRoute><Day13Interview /></PrivateRoute>} />
+                <Route path="/interview-history" element={<PrivateRoute><InterviewHistory /></PrivateRoute>} />
+                <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+                <Route path="/roadmap" element={<PrivateRoute><Roadmap /></PrivateRoute>} />
+                <Route path="/daily-challenge" element={<PrivateRoute><DailyChallenge /></PrivateRoute>} />
+                <Route path="/progress" element={<PrivateRoute><Progress /></PrivateRoute>} />
+                <Route path="/tracker" element={<PrivateRoute><PreparationTracker /></PrivateRoute>} />
+                <Route path="/hr-interview" element={<PrivateRoute><HRInterview /></PrivateRoute>} />
+                <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
 
-
-
-
-                {/* Catch all */}
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>

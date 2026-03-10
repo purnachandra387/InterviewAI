@@ -20,7 +20,7 @@ export default function Register() {
             const { data } = await registerUser(form);
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", JSON.stringify(data.user));
-            navigate("/dashboard");
+            navigate(data.user?.role === "admin" ? "/admin" : "/dashboard");
         } catch (err) {
             setError(err.response?.data?.message || "Registration failed. Try again.");
         } finally {
@@ -31,7 +31,7 @@ export default function Register() {
     return (
         <div className="auth-wrapper">
             <div className="auth-card">
-                <div className="auth-logo">🧠 <span>Interview</span>AI</div>
+                <div className="auth-logo">?? <span>Interview</span>AI</div>
 
                 <h2 className="auth-title">Create your account</h2>
                 <p className="auth-subtitle">Start preparing smarter with AI</p>
@@ -80,7 +80,7 @@ export default function Register() {
                     </div>
 
                     <button id="register-btn" className="btn btn-primary" type="submit" disabled={loading}>
-                        {loading ? <><span className="spinner"></span> Creating account…</> : "Create Account →"}
+                        {loading ? <><span className="spinner"></span> Creating account...</> : "Create Account ->"}
                     </button>
                 </form>
 

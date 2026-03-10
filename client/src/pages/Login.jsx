@@ -20,7 +20,7 @@ export default function Login() {
             const { data } = await loginUser(form);
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", JSON.stringify(data.user));
-            navigate("/dashboard");
+            navigate(data.user?.role === "admin" ? "/admin" : "/dashboard");
         } catch (err) {
             setError(err.response?.data?.message || "Login failed. Check credentials.");
         } finally {
@@ -31,9 +31,9 @@ export default function Login() {
     return (
         <div className="auth-wrapper">
             <div className="auth-card">
-                <div className="auth-logo">🧠 <span>Interview</span>AI</div>
+                <div className="auth-logo">?? <span>Interview</span>AI</div>
 
-                <h2 className="auth-title">Welcome back 👋</h2>
+                <h2 className="auth-title">Welcome back ??</h2>
                 <p className="auth-subtitle">Sign in to continue your preparation</p>
 
                 {error && <div className="alert alert-error">{error}</div>}
@@ -66,7 +66,7 @@ export default function Login() {
                     </div>
 
                     <button id="login-btn" className="btn btn-primary" type="submit" disabled={loading}>
-                        {loading ? <><span className="spinner"></span> Signing in…</> : "Sign In →"}
+                        {loading ? <><span className="spinner"></span> Signing in...</> : "Sign In ->"}
                     </button>
                 </form>
 

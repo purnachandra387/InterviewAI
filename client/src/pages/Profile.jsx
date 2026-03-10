@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { getUserBadges, getUserProfile } from "../services/api";
 
 function Profile() {
+    const navigate = useNavigate();
     const [profile, setProfile] = useState(null);
     const [badges, setBadges] = useState([]);
 
     useEffect(() => {
-        axios.get("https://interviewai-backend-0k7p.onrender.com/api/user/profile")
-            .then(res => setProfile(res.data));
-        axios.get("https://interviewai-backend-0k7p.onrender.com/api/user/badges")
-            .then(res => setBadges(res.data))
-            .catch(err => console.error(err));
-    }, []);
+        const loadProfile = async () => {
+            try {
+                const [{ data: profileData }, { data: badgeData }] = await Promise.all([
+                    getUserProfile(),
+                    getUserBadges(),
+                ]);
+                setProfile(profileData);
+                setBadges(badgeData);
+            } catch (err) {
+                if (err?.response?.status === 401 || err?.response?.status === 403) {
+                    localStorage.clear();
+                    navigate("/login");
+                }
+            }
+        };
+
+        loadProfile();
+    }, [navigate]);
 
     if (!profile) return <p>Loading...</p>;
 
@@ -19,8 +33,9 @@ function Profile() {
         <div style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
             <h2>User Profile</h2>
 
-            <p><strong>Name:</strong> {profile.user?.name || 'N/A'}</p>
-            <p><strong>Email:</strong> {profile.user?.email || 'N/A'}</p>
+            <p><strong>Name:</strong> {profile.user?.name || "N/A"}</p>
+            <p><strong>Email:</strong> {profile.user?.email || "N/A"}</p>
+            <p><strong>Access:</strong> {profile.user?.role === "admin" ? "Admin" : "User"}</p>
 
             <h3>Statistics</h3>
             <p>Total Interviews: {profile.totalInterviews}</p>
@@ -31,14 +46,13 @@ function Profile() {
                 {badges && badges.length > 0 ? (
                     badges.map((badge, index) => (
                         <div key={index} style={{ padding: "10px 15px", background: "#f8f9fa", borderRadius: "8px", border: "1px solid #ddd", fontWeight: "bold" }}>
-                            🏅 {badge}
+                            Badge {badge}
                         </div>
                     ))
                 ) : (
                     <p style={{ color: "#777" }}>No badges earned yet. Keep practicing!</p>
                 )}
             </div>
-
         </div>
     );
 }

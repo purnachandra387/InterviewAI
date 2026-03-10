@@ -1,32 +1,24 @@
 const User = require("../models/User");
 const Interview = require("../models/Interview");
-const mongoose = require("mongoose");
 
 exports.getProfile = async (req, res) => {
     try {
-        let userId = "demo-user";
-        let user;
+        const userId = req.user.id;
+        const user = await User.findById(userId).select("-password").lean();
 
-        if (mongoose.Types.ObjectId.isValid(userId)) {
-            user = await User.findById(userId);
-        } else {
-            user = await User.findOne();
-            if (user) {
-                userId = user._id.toString();
-            } else {
-                user = { name: "Demo User", email: "demo@example.com" };
-            }
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
         }
 
-        const interviews = await Interview.find({ userId });
+        const interviews = await Interview.find({ userId: userId.toString() }).select("score").lean();
         const totalInterviews = interviews.length;
-        const totalScore = interviews.reduce((sum, i) => sum + (i.score || 0), 0);
+        const totalScore = interviews.reduce((sum, interview) => sum + (interview.score || 0), 0);
         const avgScore = totalInterviews ? (totalScore / totalInterviews).toFixed(2) : 0;
 
         res.json({
             user,
             totalInterviews,
-            avgScore
+            avgScore,
         });
     } catch (err) {
         console.error("Profile API Error:", err);
@@ -36,7 +28,7 @@ exports.getProfile = async (req, res) => {
 
 exports.getBadges = async (req, res) => {
     try {
-        const user = await User.findOne();
+        const user = await User.findById(req.user.id).select("badges").lean();
         res.json(user ? user.badges : []);
     } catch (err) {
         res.status(500).json({ error: "Server error" });
